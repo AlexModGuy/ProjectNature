@@ -1,0 +1,13 @@
+itemGroup.pn=Project: Nature
+generator.projectNature=Project: Nature
+
+tile.pn.leafLitter.name=Leaf Litter
+tile.pn.campfireOff.name=Campfire
+tile.pn.campfireOn.name=Lit Campfire
+tile.pn.pitfall.name=Pitfall Trap
+tile.pn.minilog.name=Log Stool
+tile.pn.snare.name=Snare
+
+item.pn.leaf.name=Leaf
+
+entity.pn.reddeer.name=Red Deer
