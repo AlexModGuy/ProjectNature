@@ -40,7 +40,7 @@ public class BlockSnare extends Block{
 		this.setTickRandomly(true);
 		this.setStepSound(soundTypeWood);
 		if(!isAttacking){
-			this.setCreativeTab(ProjectNature.tab);
+			this.setCreativeTab(ProjectNature.tab_blocks);
 		}
 		this.setUnlocalizedName("pn.snare");
 		String i = isAttacking ? "on" : "off";

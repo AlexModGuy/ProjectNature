@@ -11,89 +11,102 @@ import com.github.alexthe666.projectnature.api.AnimalAI.AnimalAIMoving;
 import com.github.alexthe666.projectnature.api.AnimalAI.AnimalAIResponse;
 import com.github.alexthe666.projectnature.entity.EntityProjectNatureMob;
 
-public class EntityRedDeer extends EntityProjectNatureMob{
+public class EntityGrayWolf extends EntityProjectNatureMob{
 
-	public EntityRedDeer(World worldIn) {
+	public EntityGrayWolf(World worldIn) {
 		super(worldIn);
-		this.setSize(1.9F, 1.8F);
+		this.setSize(1.2F, 0.9F);
 	}
- 
+
+	@Override
 	public String getTexture() {
-		if(this.isChild()){
-			return "pn:textures/models/reddeer/reddeer_baby.png";
-		}else if(this.getGender() == 1){
-			return "pn:textures/models/reddeer/reddeer_male.png";	
-		}else{
-			return "pn:textures/models/reddeer/reddeer_female.png";	
+		switch(this.getSubtype()){
+		default:
+			return "pn:textures/models/graywolf/graywolf_wild_0.png";
+		case 1:
+			return "pn:textures/models/graywolf/graywolf_wild_1.png";
+		case 2:
+			return "pn:textures/models/graywolf/graywolf_wild_2.png";
+		case 3:
+			return "pn:textures/models/graywolf/graywolf_wild_3.png";
+		case 4:
+			return "pn:textures/models/graywolf/graywolf_wild_4.png";
+		case 5:
+			return "pn:textures/models/graywolf/graywolf_wild_5.png";
 		}
 	}
 
 	@Override
 	public AnimalAIMoving movingType() {
+
 		return AnimalAIMoving.TERESTIAL;
 	}
 
 	@Override
 	public AnimalAIAttack attackType() {
-		return AnimalAIAttack.CHARGE;
+
+		return AnimalAIAttack.SHAKE;
 	}
 
 	@Override
 	public AnimalAIActivity activityType() {
-		return AnimalAIActivity.DURINAL;
+
+		return AnimalAIActivity.BOTH;
 	}
 
 	@Override
 	public AnimalAIResponse responseType() {
-		if(this.getGender() == 1){
-			return AnimalAIResponse.TERRATIRIAL;
 
-		}else{
-			return AnimalAIResponse.AFRAID;
-	
-		}
+		return AnimalAIResponse.TERRATIRIAL;
 	}
 
 	@Override
 	public boolean canBeTamed(ItemStack stackObj, EntityPlayer player) {
+
 		return false;
 	}
 
 	@Override
 	public int maxSubtypes() {
-		return 0;
+
+		return 5;
 	}
 
 	@Override
 	public float maxSize() {
-		return 10F;
+
+		return 0.9F;
 	}
 
 	@Override
 	public float minSize() {
-		return 0.5F;
+
+		return 1.0F;
 	}
 
 	@Override
 	public int adultAge() {
-		return 10;
+
+		return 8;
 	}
 
 	@Override
 	public void onSpawn() {
+		this.setSubtype(this.rand.nextInt(6));
 		this.setGender(this.getRNG().nextInt(2));
 		this.setAnimalAge(this.adultAge());
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityRedDeer(worldObj);
+	public float femaleSizeDifference() {
+
+		return 0.9F;
 	}
 
 	@Override
-	public float femaleSizeDifference() {
-		return 0.8F;
-	}
+	public EntityAgeable createChild(EntityAgeable ageable) {
 
+		return new EntityGrayWolf(worldObj);
+	}
 
 }

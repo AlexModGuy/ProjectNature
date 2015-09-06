@@ -29,7 +29,7 @@ public class BlockMiniLog extends Block{
 		this.setHardness(0.8F);
 		this.setTickRandomly(true);
 		this.setStepSound(soundTypeWood);
-		this.setCreativeTab(ProjectNature.tab);
+		this.setCreativeTab(ProjectNature.tab_blocks);
 		this.setUnlocalizedName("pn.minilog");
 		GameRegistry.registerBlock(this, "minilog");
 	}

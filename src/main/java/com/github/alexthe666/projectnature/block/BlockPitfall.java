@@ -34,7 +34,7 @@ public class BlockPitfall extends Block{
 		this.setBlockBounds(0F, 1 - (0.0625F * 3), 0F, 1, 1, 1);
 		this.setTickRandomly(true);
 		this.setStepSound(soundTypeWood);
-		this.setCreativeTab(ProjectNature.tab);
+		this.setCreativeTab(ProjectNature.tab_blocks);
 		this.setUnlocalizedName("pn.pitfall");
 		GameRegistry.registerBlock(this, "pitfall");
 	}

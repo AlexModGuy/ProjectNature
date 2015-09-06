@@ -6,7 +6,7 @@ public class AnimalAI {
 		TERESTIAL, AQUATIC, FLYING;
 	}
 	public enum AnimalAIAttack{
-		BITE, SHAKE, CRUSH, DROWN;
+		BITE, SHAKE, CRUSH, DROWN, CHARGE;
 	}
 	public enum AnimalAIActivity{
 		DURINAL, NOCTURNAL, BOTH, UNDESISIVE;

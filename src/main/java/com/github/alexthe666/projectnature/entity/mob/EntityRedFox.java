@@ -11,21 +11,16 @@ import com.github.alexthe666.projectnature.api.AnimalAI.AnimalAIMoving;
 import com.github.alexthe666.projectnature.api.AnimalAI.AnimalAIResponse;
 import com.github.alexthe666.projectnature.entity.EntityProjectNatureMob;
 
-public class EntityRedDeer extends EntityProjectNatureMob{
+public class EntityRedFox extends EntityProjectNatureMob{
 
-	public EntityRedDeer(World worldIn) {
+	public EntityRedFox(World worldIn) {
 		super(worldIn);
-		this.setSize(1.9F, 1.8F);
+		this.setSize(1.2F, 0.9F);
 	}
- 
+
+	@Override
 	public String getTexture() {
-		if(this.isChild()){
-			return "pn:textures/models/reddeer/reddeer_baby.png";
-		}else if(this.getGender() == 1){
-			return "pn:textures/models/reddeer/reddeer_male.png";	
-		}else{
-			return "pn:textures/models/reddeer/reddeer_female.png";	
-		}
+		return "pn:textures/models/redfox/redfox_wild_0.png";
 	}
 
 	@Override
@@ -35,23 +30,20 @@ public class EntityRedDeer extends EntityProjectNatureMob{
 
 	@Override
 	public AnimalAIAttack attackType() {
-		return AnimalAIAttack.CHARGE;
+
+		return AnimalAIAttack.BITE;
 	}
 
 	@Override
 	public AnimalAIActivity activityType() {
-		return AnimalAIActivity.DURINAL;
+
+		return AnimalAIActivity.NOCTURNAL;
 	}
 
 	@Override
 	public AnimalAIResponse responseType() {
-		if(this.getGender() == 1){
-			return AnimalAIResponse.TERRATIRIAL;
 
-		}else{
-			return AnimalAIResponse.AFRAID;
-	
-		}
+		return AnimalAIResponse.AFRAID;
 	}
 
 	@Override
@@ -66,17 +58,17 @@ public class EntityRedDeer extends EntityProjectNatureMob{
 
 	@Override
 	public float maxSize() {
-		return 10F;
+		return 0.7F;
 	}
 
 	@Override
 	public float minSize() {
-		return 0.5F;
+		return 0.8F;
 	}
 
 	@Override
 	public int adultAge() {
-		return 10;
+		return 8;
 	}
 
 	@Override
@@ -86,14 +78,15 @@ public class EntityRedDeer extends EntityProjectNatureMob{
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityRedDeer(worldObj);
+	public float femaleSizeDifference() {
+
+		return 0.9F;
 	}
 
 	@Override
-	public float femaleSizeDifference() {
-		return 0.8F;
-	}
+	public EntityAgeable createChild(EntityAgeable ageable) {
 
+		return new EntityRedFox(worldObj);
+	}
 
 }

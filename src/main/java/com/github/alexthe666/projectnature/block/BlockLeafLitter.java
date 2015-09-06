@@ -33,7 +33,7 @@ public class BlockLeafLitter extends Block {
 		this.setBlockBounds(0, 0, 0, 1, 0.125F, 1);
 		this.setTickRandomly(true);
 		this.setStepSound(soundTypeGrass);
-		this.setCreativeTab(ProjectNature.tab);
+		this.setCreativeTab(ProjectNature.tab_blocks);
 		this.setUnlocalizedName("pn.leafLitter");
 		GameRegistry.registerBlock(this, "leaflitter");
 	}

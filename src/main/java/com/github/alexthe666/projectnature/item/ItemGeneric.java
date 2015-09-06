@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ItemGeneric extends Item {
 	public ItemGeneric(String name){
 		super();
-		this.setCreativeTab(ProjectNature.tab);
+		this.setCreativeTab(ProjectNature.tab_items);
 		GameRegistry.registerItem(this, name);
 	}
 }

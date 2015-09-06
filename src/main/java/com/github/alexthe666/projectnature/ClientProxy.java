@@ -1,21 +1,34 @@
 package com.github.alexthe666.projectnature;
 
+import java.util.Iterator;
+
+import net.ilexiconn.llibrary.common.entity.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
-import com.github.alexthe666.projectnature.client.render.entity.*;
+import com.github.alexthe666.projectnature.client.model.ModelGrayWolf;
+import com.github.alexthe666.projectnature.client.model.ModelPNRabbit;
+import com.github.alexthe666.projectnature.client.model.ModelRedDeer;
+import com.github.alexthe666.projectnature.client.model.ModelRedFox;
+import com.github.alexthe666.projectnature.client.model.ModelWildBoar;
+import com.github.alexthe666.projectnature.client.render.entity.RenderProjectNatureMob;
 import com.github.alexthe666.projectnature.core.ModBlocks;
 import com.github.alexthe666.projectnature.core.ModItems;
-import com.github.alexthe666.projectnature.entity.mob.*;
+import com.github.alexthe666.projectnature.entity.mob.EntityGrayWolf;
+import com.github.alexthe666.projectnature.entity.mob.EntityPNRabbit;
+import com.github.alexthe666.projectnature.entity.mob.EntityRedDeer;
+import com.github.alexthe666.projectnature.entity.mob.EntityRedFox;
+import com.github.alexthe666.projectnature.entity.mob.EntityWildBoar;
 
 public class ClientProxy extends CommonProxy{
 
 	public void render(){
 		renderBlocks();
 		renderItems();
+		renderSpawnEggs();
 		renderEntites();
 	}
 	public void renderBlocks(){
@@ -30,10 +43,25 @@ public class ClientProxy extends CommonProxy{
 
 	}
 	public void renderItems(){
+
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		renderItem.getItemModelMesher().register(ModItems.leaf, 0, new ModelResourceLocation("pn:leaf", "inventory"));
 	}
+	public void renderSpawnEggs(){
+		Iterator iterator = List.entities.values().iterator();
+		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+		while (iterator.hasNext())
+		{
+			List.Entities entityegginfo = (List.Entities) iterator.next();
+			renderItem.getItemModelMesher().register(ModItems.spawnegg, entityegginfo.id, new ModelResourceLocation("pn:spawnEgg", "inventory"));
+		}
+	}
 	public void renderEntites(){
-		RenderingRegistry.registerEntityRenderingHandler(EntityRedDeer.class, new RenderRedDeer(Minecraft.getMinecraft().getRenderManager()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedDeer.class, new RenderProjectNatureMob(Minecraft.getMinecraft().getRenderManager(), new ModelRedDeer()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityPNRabbit.class, new RenderProjectNatureMob(Minecraft.getMinecraft().getRenderManager(), new ModelPNRabbit()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrayWolf.class, new RenderProjectNatureMob(Minecraft.getMinecraft().getRenderManager(), new ModelGrayWolf()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedFox.class, new RenderProjectNatureMob(Minecraft.getMinecraft().getRenderManager(), new ModelRedFox()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityWildBoar.class, new RenderProjectNatureMob(Minecraft.getMinecraft().getRenderManager(), new ModelWildBoar()));
+
 	}
 }

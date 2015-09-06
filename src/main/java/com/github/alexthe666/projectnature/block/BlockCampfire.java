@@ -32,7 +32,7 @@ public class BlockCampfire extends Block {
 		this.setBlockBounds(0.0625F, 0, 0.0625F, 1 - 0.0625F, 0.0625F * 3, 1 - 0.0625F);
 		this.setTickRandomly(true);
 		this.setStepSound(soundTypeWood);
-		this.setCreativeTab(ProjectNature.tab);
+		this.setCreativeTab(ProjectNature.tab_blocks);
 		this.setUnlocalizedName(isLighted ? "pn.campfireOn" : "pn.campfireOff");
 		GameRegistry.registerBlock(this, isLighted ? "campfireon" : "campfireoff");
 
