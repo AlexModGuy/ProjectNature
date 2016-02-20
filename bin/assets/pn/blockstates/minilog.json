@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "pn:minilog" },
+        "facing=south": { "model": "pn:minilog", "y": 180 },
+        "facing=west":  { "model": "pn:minilog", "y": 270 },
+        "facing=east":  { "model": "pn:minilog", "y": 90 }
+    }
+}

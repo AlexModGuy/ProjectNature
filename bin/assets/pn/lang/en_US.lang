@@ -1,0 +1,20 @@
+itemGroup.pn.blocks=Project Nature: Blocks
+itemGroup.pn.items=Project Nature: Items
+itemGroup.pn.eggs=Project Nature: Spawn Eggs
+generator.projectNature=Project: Nature
+
+tile.pn.leafLitter.name=Leaf Litter
+tile.pn.campfireOff.name=Campfire
+tile.pn.campfireOn.name=Lit Campfire
+tile.pn.pitfall.name=Pitfall Trap
+tile.pn.minilog.name=Log Stool
+tile.pn.snare.name=Snare
+
+item.spawnEgg.name=Spawn
+item.pn.leaf.name=Leaf
+
+entity.pn.reddeer.name=Red Deer
+entity.pn.rabbit.name=Rabbit
+entity.pn.graywolf.name=Gray Wolf
+entity.pn.redfox.name=Red Fox
+entity.pn.wildboar.name=Wild Boar

@@ -76,7 +76,6 @@ public class ModelRedDeer extends MowzieModelBase {
         this.HeadPivot.setRotationPoint(0.0F, -0.6F, -4.8F);
         this.setRotateAngle(HeadPivot, 1.3658946726107624F, 0.0F, 0.0F);
         this.HeadBase = new MowzieModelRenderer(this, 0, 16);
-        this.HeadBase.setRotationPoint(0F, 0F, 0F);
         this.HeadBase.addBox(-2.5F, -2.51F, -3.8F, 5, 4, 5, 0.0F);
         this.Body = new MowzieModelRenderer(this, 34, 47);
         this.Body.setRotationPoint(0.0F, 8.7F, -4.0F);
@@ -185,7 +184,7 @@ public class ModelRedDeer extends MowzieModelBase {
     	MowzieModelRenderer[] tailParts = {this.Tail};
 		MowzieModelRenderer[] neckParts = {this.Neck1, this.Neck2};
 
-		this.faceTarget(HeadBase, 1, f3, f4);
+		this.faceTarget(HeadBase, 2, f3, f4);
 		this.faceTarget(Neck1, 2, f3, f4);
 
 		float speed = 0.1F;

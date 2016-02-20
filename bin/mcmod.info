@@ -1,0 +1,16 @@
+[
+{
+  "modid": "pn",
+  "name": "Project: Nature",
+  "description": "Liven up Minecraft with new animals, remodels, gameplay changes and more!",
+  "version": "0.1",
+  "mcversion": "1.8.x",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Alexthe666"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

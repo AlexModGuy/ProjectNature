@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 import com.github.alexthe666.projectnature.core.ModBlocks;
-import com.github.alexthe666.projectnature.core.ModEntites;
+import com.github.alexthe666.projectnature.core.ModEntities;
 import com.github.alexthe666.projectnature.core.ModItems;
 import com.github.alexthe666.projectnature.core.ModRecipes;
 import com.github.alexthe666.projectnature.core.ModWorld;
@@ -40,7 +40,7 @@ public class ProjectNature
     	ModBlocks.init();
     	ModItems.init();
     	ModRecipes.init();
-    	ModEntites.init();
+    	ModEntities.init();
     	ModWorld.init();
     	proxy.render();
     }

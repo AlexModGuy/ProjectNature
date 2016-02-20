@@ -16,6 +16,7 @@ public class EntityGrayWolf extends EntityProjectNatureMob{
 	public EntityGrayWolf(World worldIn) {
 		super(worldIn);
 		this.setSize(1.2F, 0.9F);
+		shadowMultiplier = 0.7F;
 	}
 
 	@Override
