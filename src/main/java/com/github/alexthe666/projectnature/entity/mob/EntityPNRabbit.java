@@ -16,6 +16,7 @@ public class EntityPNRabbit extends EntityProjectNatureMob{
 	public EntityPNRabbit(World worldIn) {
 		super(worldIn);
 		this.setSize(1.1F, 1.2F);
+		shadowMultiplier = 0.4F;
 	}
 
 	@Override

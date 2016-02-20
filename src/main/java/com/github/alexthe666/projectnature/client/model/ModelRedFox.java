@@ -18,6 +18,7 @@ public class ModelRedFox extends MowzieModelBase {
     public MowzieModelRenderer Tail2;
     public MowzieModelRenderer Tail3;
     public MowzieModelRenderer Tail2_b;
+    public MowzieModelRenderer HeadPivot;
     public MowzieModelRenderer HeadBase;
     public MowzieModelRenderer HeadFront;
     public MowzieModelRenderer Jaw;
@@ -49,10 +50,11 @@ public class ModelRedFox extends MowzieModelBase {
         this.EarL.setRotationPoint(2.3F, -1.9F, -1.1F);
         this.EarL.addBox(-1.0F, -1.1F, -3.1F, 3, 1, 3, 0.0F);
         this.setRotateAngle(EarL, -2.2689280275926285F, -0.40142572795869574F, 0.7155849933176751F);
+        this.HeadPivot = new MowzieModelRenderer(this, 0, 0);
+        this.HeadPivot.setRotationPoint(0.0F, 0.2F, -4.7F);
+        this.setRotateAngle(HeadPivot, 0.8651597102135892F, 0.0F, 0.0F);
         this.HeadBase = new MowzieModelRenderer(this, 1, 17);
-        this.HeadBase.setRotationPoint(0.0F, 0.2F, -4.7F);
         this.HeadBase.addBox(-3.5F, -2.51F, -3.8F, 7, 6, 4, 0.0F);
-        this.setRotateAngle(HeadBase, 0.8651597102135892F, 0.0F, 0.0F);
         this.HeadFront = new MowzieModelRenderer(this, 0, 7);
         this.HeadFront.setRotationPoint(0.0F, 0.5F, -3.1F);
         this.HeadFront.addBox(-1.5F, -1.4F, -5.4F, 3, 3, 5, 0.0F);
@@ -152,7 +154,8 @@ public class ModelRedFox extends MowzieModelBase {
         this.setRotateAngle(ChopsR, -2.5953045977155678F, 1.0471975511965976F, -0.9560913642424937F);
         this.Tail2.addChild(this.Tail2_b);
         this.HeadBase.addChild(this.EarL);
-        this.Neck1.addChild(this.HeadBase);
+        this.Neck1.addChild(this.HeadPivot);
+        this.HeadPivot.addChild(this.HeadBase);
         this.HeadBase.addChild(this.HeadFront);
         this.Body.addChild(this.LowerBody);
         this.LegL2.addChild(this.LegL3);
@@ -187,7 +190,7 @@ public class ModelRedFox extends MowzieModelBase {
     	float speed2 = 0.1F;
     	MowzieModelRenderer[] tailParts = {this.Tail, this.Tail2, this.Tail3};
 		MowzieModelRenderer[] neckParts = {this.Neck1};
-    	this.faceTarget(HeadBase, 1, f3, f4);
+    	this.faceTarget(HeadBase, 2, f3, f4);
 		this.faceTarget(Neck1, 2, f3, f4);
 		this.bob(Body, speed2, 0.1F, false, entity.ticksExisted, 1);
 		this.walk(LegL1, speed, 0.4F, false, 0F, 0.4F, f, f1);

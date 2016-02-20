@@ -59,6 +59,7 @@ public class BlockLeafLitter extends Block {
 	{
 		this.checkAndDropBlock(worldIn, pos, state);
 	}
+	
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
 		int chance = rand.nextInt(100);
@@ -71,6 +72,7 @@ public class BlockLeafLitter extends Block {
 			return null;
 		}
 	}
+	
 	private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state)
 	{
 		if (!this.canPlaceBlockAt(worldIn, pos))
@@ -83,6 +85,7 @@ public class BlockLeafLitter extends Block {
 			return true;
 		}
 	}
+	
 	@SideOnly(Side.CLIENT)
 	public int getBlockColor()
 	{
@@ -94,16 +97,19 @@ public class BlockLeafLitter extends Block {
 	{
 		return ColorizerFoliage.getFoliageColorBasic();
 	}
+	
 	@SideOnly(Side.CLIENT)
 	public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass)
 	{
 		return BiomeColorHelper.getFoliageColorAtPos(worldIn, pos);
 	}
+	
 	@SideOnly(Side.CLIENT)
 	public EnumWorldBlockLayer getBlockLayer()
 	{
-		return EnumWorldBlockLayer.CUTOUT_MIPPED;
+		return EnumWorldBlockLayer.CUTOUT;
 	}
+	
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
     {

@@ -1,9 +1,8 @@
 package com.github.alexthe666.projectnature.core;
 
 import java.util.Random;
-
-import net.ilexiconn.llibrary.common.entity.List;
 import net.minecraft.entity.EntityList;
+import net.minecraft.init.Items;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import com.github.alexthe666.projectnature.ProjectNature;
@@ -13,7 +12,7 @@ import com.github.alexthe666.projectnature.entity.mob.EntityRedDeer;
 import com.github.alexthe666.projectnature.entity.mob.EntityRedFox;
 import com.github.alexthe666.projectnature.entity.mob.EntityWildBoar;
 
-public class ModEntites{
+public class ModEntities{
 
 	public static void init(){
 		registerSpawnable(EntityRedDeer.class, "pn.reddeer", 0X593817, 0X795C3D);
@@ -28,9 +27,8 @@ public class ModEntites{
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
 		long x = name.hashCode();
 		Random random = new Random(x);
-		EntityRegistry.registerGlobalEntityID(entityClass, name, entityId);
+		EntityRegistry.registerGlobalEntityID(entityClass, name, entityId, mainColor, subColor);
 		EntityRegistry.registerModEntity(entityClass, name, entityId, ProjectNature.instance, 64, 1, true);
-		List.addToList(entityClass, name, entityId, mainColor, subColor, ModItems.spawnegg);//.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 	}
 	
 	public static void registerUnspawnable(Class entityClass, String name){

@@ -16,6 +16,7 @@ public class EntityRedDeer extends EntityProjectNatureMob{
 	public EntityRedDeer(World worldIn) {
 		super(worldIn);
 		this.setSize(1.9F, 1.8F);
+		shadowMultiplier = 0.6F;
 	}
  
 	public String getTexture() {
