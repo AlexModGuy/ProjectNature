@@ -38,8 +38,7 @@ public abstract class EntityProjectNatureMob extends EntityTameable{
 	public boolean isFlying;
 	public BlockPos currentTarget;
 	public EnumOrder currentOrder;
-	public float shadowMultiplier;
-	
+
 	public EntityProjectNatureMob(World worldIn) {
 		super(worldIn);
 		this.currentOrder = EnumOrder.WANDER;
@@ -345,10 +344,10 @@ public abstract class EntityProjectNatureMob extends EntityTameable{
 	{
 		return false;
 	}
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, IEntityLivingData data)
+	public IEntityLivingData func_180482_a(DifficultyInstance difficulty, IEntityLivingData data)
 	{
 		this.onSpawn();
-		return super.onInitialSpawn(difficulty, data);
+		return super.func_180482_a(difficulty, data);
 	}
 
 	public boolean isHungry() {

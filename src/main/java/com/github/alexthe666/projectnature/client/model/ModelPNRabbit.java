@@ -96,10 +96,13 @@ public class ModelPNRabbit extends MowzieModelBase {
         this.BackLegR1.setRotationPoint(3.8F, 0.6F, 6.6F);
         this.BackLegR1.addBox(-1.0F, 0.0F, -1.5F, 2, 6, 4, 0.0F);
         this.setRotateAngle(BackLegR1, -0.08726646259971647F, 0.0F, 0.0F);
+
         this.headpivot = new MowzieModelRenderer(this, 0, 0);
         this.headpivot.setRotationPoint(0.0F, 0.3F, -5.2F);
+        this.headpivot.addBox(0.0F, 0.0F, 0.0F, 0, 0, 0, 0.0F);
         this.setRotateAngle(headpivot, 0.9105382707654417F, 0.0F, 0.0F);
         this.HeadBase = new MowzieModelRenderer(this, 0, 16);
+        this.HeadBase.setRotationPoint(0,0,0);
         this.HeadBase.addBox(-2.5F, -2.51F, -3.0F, 5, 5, 4, 0.0F);
         this.Tail = new MowzieModelRenderer(this, 51, 18);
         this.Tail.setRotationPoint(0.0F, -0.9F, 9.9F);
@@ -165,7 +168,7 @@ public class ModelPNRabbit extends MowzieModelBase {
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
 		MowzieModelRenderer[] tailParts = {this.Tail};
 		
-		this.faceTarget(HeadBase, 2, f3, f4);
+		this.faceTarget(HeadBase, 1, f3, f4);
 		this.faceTarget(Neck1, 2, f3, f4);
 		float speed = 0.5F;
 		float speed2 = 0.2F;

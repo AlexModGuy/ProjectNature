@@ -25,7 +25,6 @@ public class ModelGrayWolf extends MowzieModelBase {
     public MowzieModelRenderer BackLegR3;
     public MowzieModelRenderer BackLegL2;
     public MowzieModelRenderer BackLegL3;
-    public MowzieModelRenderer HeadPivot;
     public MowzieModelRenderer HeadBase;
     public MowzieModelRenderer HeadFront;
     public MowzieModelRenderer Jaw;
@@ -45,10 +44,9 @@ public class ModelGrayWolf extends MowzieModelBase {
         this.LowerBody.setRotationPoint(0.0F, 0.0F, 2.0F);
         this.LowerBody.addBox(-3.0F, -2.7F, -0.1F, 6, 8, 12, 0.0F);
         this.HeadBase = new MowzieModelRenderer(this, 0, 16);
+        this.HeadBase.setRotationPoint(0.0F, 0.7F, -5.6F);
         this.HeadBase.addBox(-3.5F, -2.51F, -3.8F, 7, 6, 5, 0.0F);
-        this.HeadPivot = new MowzieModelRenderer(this, 0, 0);
-        this.HeadPivot.setRotationPoint(0.0F, 0.7F, -5.6F);
-        this.setRotateAngle(HeadPivot, 0.9105382707654417F, 0.0F, 0.0F);
+        this.setRotateAngle(HeadBase, 0.9105382707654417F, 0.0F, 0.0F);
         this.LegR1 = new MowzieModelRenderer(this, 0, 54);
         this.LegR1.setRotationPoint(-3.3F, 11.4F, -7.5F);
         this.LegR1.addBox(-1.0F, 0.0F, -1.5F, 2, 6, 3, 0.0F);
@@ -152,8 +150,7 @@ public class ModelGrayWolf extends MowzieModelBase {
         this.Tail.addBox(-1.5F, -1.0F, 0.0F, 3, 3, 7, 0.0F);
         this.setRotateAngle(Tail, -1.0016444577195458F, 0.0F, 0.0F);
         this.Body.addChild(this.LowerBody);
-        this.Neck1.addChild(this.HeadPivot);
-        this.HeadPivot.addChild(this.HeadBase);
+        this.Neck1.addChild(this.HeadBase);
         this.LegL2.addChild(this.LegL3);
         this.HeadFront.addChild(this.Nose);
         this.Tail.addChild(this.Tail2_a);
@@ -190,7 +187,7 @@ public class ModelGrayWolf extends MowzieModelBase {
 
     	MowzieModelRenderer[] tailParts = {this.Tail, this.Tail2_a, this.Tail3};
 		MowzieModelRenderer[] neckParts = {this.Neck1};
-    	this.faceTarget(HeadBase, 2, f3, f4);
+    	this.faceTarget(HeadBase, 1, f3, f4);
 		this.faceTarget(Neck1, 2, f3, f4);
 		this.bob(Body, speed2, 0.1F, false, entity.ticksExisted, 1);
 		this.walk(LegL1, speed, 0.4F, false, 0F, 0.4F, f, f1);

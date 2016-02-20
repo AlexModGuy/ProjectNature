@@ -16,7 +16,6 @@ public class EntityWildBoar extends EntityProjectNatureMob{
 	public EntityWildBoar(World worldIn) {
 		super(worldIn);
 		this.setSize(1.1F, 0.9F);
-		shadowMultiplier = 0.5F;
 	}
 
 	@Override

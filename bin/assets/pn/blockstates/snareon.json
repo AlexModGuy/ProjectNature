@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "pn:snareon" },
-        "facing=south": { "model": "pn:snareon", "y": 180 },
-        "facing=west":  { "model": "pn:snareon", "y": 270 },
-        "facing=east":  { "model": "pn:snareon", "y": 90 }
-    }
-}

@@ -16,7 +16,6 @@ public class EntityRedFox extends EntityProjectNatureMob{
 	public EntityRedFox(World worldIn) {
 		super(worldIn);
 		this.setSize(1.2F, 0.9F);
-		shadowMultiplier = 0.55F;
 	}
 
 	@Override

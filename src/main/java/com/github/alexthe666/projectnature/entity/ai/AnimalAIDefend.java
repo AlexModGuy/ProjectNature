@@ -47,7 +47,7 @@ public class AnimalAIDefend extends EntityAITarget
             {
                 this.theOwnerAttacker = entitylivingbase.getAITarget();
                 int i =  entitylivingbase.getRevengeTimer();
-                return i != this.field_142051_e && this.isSuitableTarget(this.theOwnerAttacker, false) && this.mob.shouldAttackEntity(this.theOwnerAttacker, entitylivingbase);
+                return i != this.field_142051_e && this.isSuitableTarget(this.theOwnerAttacker, false) && this.mob.func_142018_a(this.theOwnerAttacker, entitylivingbase);
             }
         }
     }

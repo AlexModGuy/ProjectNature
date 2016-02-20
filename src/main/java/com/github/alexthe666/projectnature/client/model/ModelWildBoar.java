@@ -16,7 +16,6 @@ public class ModelWildBoar extends MowzieModelBase {
     public MowzieModelRenderer Neck1;
     public MowzieModelRenderer Tail1;
     public MowzieModelRenderer Tail2;
-    public MowzieModelRenderer HeadPivot;
     public MowzieModelRenderer HeadBase;
     public MowzieModelRenderer HeadFront;
     public MowzieModelRenderer Jaw;
@@ -70,11 +69,10 @@ public class ModelWildBoar extends MowzieModelBase {
         this.HeadFront.setRotationPoint(0.0F, 0.9F, 0.3F);
         this.HeadFront.addBox(-2.0F, -2.5F, -10.0F, 4, 4, 10, 0.0F);
         this.setRotateAngle(HeadFront, 0.8201302155121354F, 0.0F, 0.0F);
-        this.HeadPivot = new MowzieModelRenderer(this, 0, 0);
-        this.HeadPivot.setRotationPoint(0.0F, -0.1F, -4.3F);
-        this.setRotateAngle(HeadPivot, -0.44872415068774213F, 0.0F, 0.0F);
         this.HeadBase = new MowzieModelRenderer(this, 85, 35);
+        this.HeadBase.setRotationPoint(0.0F, -0.1F, -4.3F);
         this.HeadBase.addBox(-3.0F, -1.0F, -3.0F, 6, 9, 5, 0.0F);
+        this.setRotateAngle(HeadBase, -0.44872415068774213F, 0.0F, 0.0F);
         this.TuskR1 = new MowzieModelRenderer(this, 56, 0);
         this.TuskR1.mirror = true;
         this.TuskR1.setRotationPoint(0.5F, 1.0F, 0.0F);
@@ -142,8 +140,7 @@ public class ModelWildBoar extends MowzieModelBase {
         this.HeadBase.addChild(this.EarL);
         this.Jaw.addChild(this.TuskL1);
         this.HeadBase.addChild(this.HeadFront);
-        this.Neck1.addChild(this.HeadPivot);
-        this.HeadPivot.addChild(this.HeadBase);
+        this.Neck1.addChild(this.HeadBase);
         this.Jaw.addChild(this.TuskR1);
         this.TuskL1.addChild(this.TuskL2);
         this.Body.addChild(this.Neck1);
@@ -173,7 +170,7 @@ public class ModelWildBoar extends MowzieModelBase {
 
     	MowzieModelRenderer[] tailParts = {this.Tail1, this.Tail2};
 		MowzieModelRenderer[] neckParts = {this.Neck1, HeadBase};
-		this.faceTarget(HeadBase, 2, f3, f4);
+		this.faceTarget(HeadBase, 1, f3, f4);
 		this.faceTarget(Neck1, 2, f3, f4);
 		this.bob(Body, speed2, 0.1F, false, entity.ticksExisted, 1);
 

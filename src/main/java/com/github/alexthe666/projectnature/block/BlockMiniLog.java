@@ -2,7 +2,6 @@ package com.github.alexthe666.projectnature.block;
 
 import java.util.List;
 
-import net.ilexiconn.llibrary.common.entity.EntityMountableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -20,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.github.alexthe666.projectnature.ProjectNature;
+import com.github.alexthe666.projectnature.entity.EntityMoutableLog;
 
 public class BlockMiniLog extends Block{
 
@@ -96,8 +96,8 @@ public class BlockMiniLog extends Block{
 	    {
 	        if (!world.isRemote)
 	        {
-	            List<EntityMountableBlock> mountableBlocks = world.getEntitiesWithinAABB(EntityMountableBlock.class, AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1f, pos.getY() + 1f, pos.getZ() + 1f).expand(1f, 1f, 1f));
-	            for (EntityMountableBlock mountableBlock : mountableBlocks)
+	            List<EntityMoutableLog> mountableBlocks = world.getEntitiesWithinAABB(EntityMoutableLog.class, AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1f, pos.getY() + 1f, pos.getZ() + 1f).expand(1f, 1f, 1f));
+	            for (EntityMoutableLog mountableBlock : mountableBlocks)
 	                if (mountableBlock.blockPos == pos)
 	                    return mountableBlock.interactFirst(player);
 
@@ -105,7 +105,7 @@ public class BlockMiniLog extends Block{
 	            float mountY = pos.getY() + 0.3F;
 	            float mountZ = pos.getZ() + 0.5F;
 
-	            EntityMountableBlock mountableBlock = new EntityMountableBlock(world, pos, mountX, mountY, mountZ);
+	            EntityMoutableLog mountableBlock = new EntityMoutableLog(world, pos, mountX, mountY, mountZ);
 	            world.spawnEntityInWorld(mountableBlock);
 	            return mountableBlock.interactFirst(player);
 	        }
@@ -117,8 +117,8 @@ public class BlockMiniLog extends Block{
 	    {
 	        if (!world.isRemote)
 	        {
-	            List<EntityMountableBlock> mountableBlocks = world.getEntitiesWithinAABB(EntityMountableBlock.class, AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1f, pos.getY() + 1f, pos.getZ() + 1f).expand(1f, 1f, 1f));
-	            for (EntityMountableBlock mountableBlock : mountableBlocks)
+	            List<EntityMoutableLog> mountableBlocks = world.getEntitiesWithinAABB(EntityMoutableLog.class, AxisAlignedBB.fromBounds(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1f, pos.getY() + 1f, pos.getZ() + 1f).expand(1f, 1f, 1f));
+	            for (EntityMoutableLog mountableBlock : mountableBlocks)
 	                mountableBlock.setDead();
 	        }
 	    }

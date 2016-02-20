@@ -29,7 +29,6 @@ public class RenderProjectNatureMob extends RenderLiving {
 	{
 		if(entity instanceof EntityProjectNatureMob){
 			EntityProjectNatureMob mob = (EntityProjectNatureMob)entity;
-			this.shadowSize = mob.getAnimalSize() * mob.shadowMultiplier;
 			GL11.glScalef(mob.getAnimalSize(), mob.getAnimalSize(), mob.getAnimalSize());
 			if(mob.getGender() == 0){
 				GL11.glScalef(mob.femaleSizeDifference(), mob.femaleSizeDifference(), mob.femaleSizeDifference());

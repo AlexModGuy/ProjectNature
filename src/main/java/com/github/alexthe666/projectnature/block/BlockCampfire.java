@@ -59,12 +59,10 @@ public class BlockCampfire extends Block {
 	{
 		this.checkAndDropBlock(worldIn, pos, state);
 	}
-	
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
 		return Item.getItemFromBlock(ModBlocks.campfireoff);
 	}
-	
 	private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state)
 	{
 		if (!this.canPlaceBlockAt(worldIn, pos))
@@ -77,13 +75,11 @@ public class BlockCampfire extends Block {
 			return true;
 		}
 	}
-	
 	@SideOnly(Side.CLIENT)
 	public EnumWorldBlockLayer getBlockLayer()
 	{
 		return EnumWorldBlockLayer.CUTOUT;
 	}
-	
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
@@ -103,7 +99,6 @@ public class BlockCampfire extends Block {
 			}
 		}
 	}
-	
 	public void onLanded(World worldIn, Entity entityIn)
 	{
 		super.onLanded(worldIn, entityIn);
