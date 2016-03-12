@@ -25,8 +25,6 @@ public class ModEntities{
 	
 	public static void registerSpawnable(Class entityClass, String name, int mainColor, int subColor){
 		int entityId = EntityRegistry.findGlobalUniqueEntityId();
-		long x = name.hashCode();
-		Random random = new Random(x);
 		EntityRegistry.registerGlobalEntityID(entityClass, name, entityId, mainColor, subColor);
 		EntityRegistry.registerModEntity(entityClass, name, entityId, ProjectNature.instance, 64, 1, true);
 	}
